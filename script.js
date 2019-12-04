@@ -1,4 +1,8 @@
-function ingredSubmit (foodList)
+$("#ingredSubmit").on("click", submit );
+$("#ingredAdd").on("click", add);
+$("#ingredClear").on("click", clear );
+
+function submit (foodList)
 {
     var sendList = "";
     for (j=0 ; j<foodList.length; j++)
@@ -71,3 +75,4 @@ function ingredSubmit (foodList)
         });
     });
 };
+
