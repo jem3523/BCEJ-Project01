@@ -85,7 +85,7 @@ p {
     margin: 0 auto;
  }
 .ingred-tables {
-    margin-bottom: 3.125em;
+    margin-bottom: 1em;
     text-align: center;
 }
 
@@ -95,8 +95,12 @@ p {
  */
 .ingred-table {
     border: 1px solid #ddd;
-    margin: 0 0.5em 2em;
-    padding: 0 0 3em;
+    padding: 0;
+    margin-top: .5em;
+    margin-right: .5em;
+    margin-bottom: .5em;
+    margin-left: .5em;
+    
 }
 
 /*
@@ -159,7 +163,10 @@ p {
  */
 .ingred-table-list {
     list-style-type: none;
-    margin: 0;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-right: .4em;
+    margin-left: .4em;
     padding: 0;
     text-align: center;
     color: #6d0202;
@@ -191,10 +198,29 @@ p {
     position: relative;
 
    
+    margin-top: 0em;
+    margin-right: 1em;
+    margin-bottom: 1.5em;
+    margin-left: 1em;
+}
+
+.button-recipe {
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #333;
+    border-radius: 2em;
+    font-weight: bold;
+    position: relative;
+
+   
     margin-top: 1.5em;
     margin-right: 1em;
-    margin-bottom: 0em;
+    margin-bottom: .5em;
     margin-left: 1em;
+}
+
+.inputBox {
+    margin-bottom: 1.5em;
 }
 
 .information-head {

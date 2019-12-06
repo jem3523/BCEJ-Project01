@@ -33,7 +33,7 @@ function clear ()
     event.preventDefault();
     ingredList = [];
     $("#food-entry-list").empty();
-    $("#level01").remove();
+    $("#level02").remove();
 }
 
 //this function takes the ingredients adds the to the API to bring back
@@ -98,15 +98,14 @@ function submit ()
                 console.log("spoon source: " + spoonacularSourceURL);
 
                 //start building the dynamic HTML for the results
-                $("#level01").remove();
-                $("#recipeReturn").append("<div class = 'pure-u-1 pure-u-md-1-2' id = 'level01' ></div>");
-                $("#level01").append("<div class = 'ingred-table ingred-table-biz ingred-table-selected' id = 'level02' ></div>");
+                $("#level02").remove();
+                $("#recipeReturn").append("<div class = 'ingred-table ingred-table-biz ingred-table-selected' id = 'level02' ></div>");
     
                 $("#level02").append("<div class = 'ingred-table-header' id = 'level03' style = 'text-align:center'></div>");
                 $("#level03").append("<img src='" + image  + "' height ='200' width = '200' style = 'padding-bottom:1em'>");
                 $("#level03").append("<ul class = 'ingred-table-list' id = 'list'></ul>");
                 $("#list").append("<li><b>Your Recipe: </b>" + title + "</li>");
-                $("#level03").append("<a class = 'button-choose pure-button' id = 'getRecipeButton' href = '"
+                $("#level03").append("<a class = 'button-recipe pure-button' id = 'getRecipeButton' href = '"
                 + sourceURL + "'>Go To Recipe</a>");
 
                 //sometimes there is no wine pairing, so check to see if there is one
@@ -134,9 +133,8 @@ function submit ()
         //so if there are NO recipes then add text that accommodates that
         else
         {
-            $("#level01").remove();
-            $("#recipeReturn").append("<div class = 'pure-u-1 pure-u-md-1-2' id = 'level01' ></div>");
-            $("#level01").append("<div class = 'ingred-table ingred-table-biz ingred-table-selected' id = 'level02' ></div>");
+            $("#level02").remove();
+            $("#recipeReturn").append("<div class = 'ingred-table ingred-table-biz ingred-table-selected' id = 'level02' ></div>");
             $("#level02").append("<div class = 'ingred-table-header' id = 'level03' ></div>");
             $("#level03").append("<h3><b>Sorry!</b> There are no recipes for those ingredients.</h3>");
 
