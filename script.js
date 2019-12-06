@@ -1,19 +1,3 @@
-var APIKey = "b156bd4b72934f839219b3c296bbeffa";
-
-//URL we need to query the database
-var queryURL = "https://api.spoonacular.com/recipes/search?apiKey=" + APIKey + "&query=" + "cheese, chicken" + "&number=5"
-
-var ingredAdd = $("#ingredAdd"); 
-var ingredClear = $("#ingredClear"); 
-var foodEntryBox = $("#foodEntryBox"); 
-var inputBox = $("<input>"); 
-var foodEntryList = []; 
-
-//INGREDADD
-//user inputs ingredients into box on click of add
-//ingredient is displayed in box
-//ingredient added to array
-
 var ingredList =[];
 
 $("#ingredSubmit").on("click", submit );
@@ -45,9 +29,3 @@ function clear ()
     $("#level01").remove();
 }
 
-//INGREDCLEAR
-//empties div holding ingredients
-
-//INGREDSUBMIT
-//user confirms ingredients, that are saved into an array
-//the array is then re-formatted and inputted into the spoontacular API
