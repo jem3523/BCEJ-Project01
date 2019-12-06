@@ -9,7 +9,7 @@ function add ()
     var newItem = $("#ingredInput").val().trim();
     console.log(newItem);
 
-    if (newItem.val() === null)
+    if (newItem.length < 1)
     {
         console.log("null entry");
     }
