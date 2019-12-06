@@ -100,11 +100,11 @@ function submit ()
                 //start building the dynamic HTML for the results
                 $("#level01").remove();
                 $("#recipeReturn").append("<div class = 'pure-u-1 pure-u-md-1-2' id = 'level01' ></div>");
-                $("#level01").append("<div class = 'pricing-table pricing-table-biz pricing-table-selected' id = 'level02' ></div>");
+                $("#level01").append("<div class = 'ingred-table ingred-table-biz ingred-table-selected' id = 'level02' ></div>");
     
-                $("#level02").append("<div class = 'pricing-table-header' id = 'level03' style = 'text-align:center'></div>");
+                $("#level02").append("<div class = 'ingred-table-header' id = 'level03' style = 'text-align:center'></div>");
                 $("#level03").append("<img src='" + image  + "' height ='200' width = '200' style = 'padding-bottom:1em'>");
-                $("#level03").append("<ul class = 'pricing-table-list' id = 'list'></ul>");
+                $("#level03").append("<ul class = 'ingred-table-list' id = 'list'></ul>");
                 $("#list").append("<li><b>Your Recipe: </b>" + title + "</li>");
                 $("#level03").append("<a class = 'button-choose pure-button' id = 'getRecipeButton' href = '"
                 + sourceURL + "'>Go To Recipe</a>");
@@ -136,8 +136,8 @@ function submit ()
         {
             $("#level01").remove();
             $("#recipeReturn").append("<div class = 'pure-u-1 pure-u-md-1-2' id = 'level01' ></div>");
-            $("#level01").append("<div class = 'pricing-table pricing-table-biz pricing-table-selected' id = 'level02' ></div>");
-            $("#level02").append("<div class = 'pricing-table-header' id = 'level03' ></div>");
+            $("#level01").append("<div class = 'ingred-table ingred-table-biz ingred-table-selected' id = 'level02' ></div>");
+            $("#level02").append("<div class = 'ingred-table-header' id = 'level03' ></div>");
             $("#level03").append("<h3><b>Sorry!</b> There are no recipes for those ingredients.</h3>");
 
         }

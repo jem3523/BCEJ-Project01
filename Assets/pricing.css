@@ -10,12 +10,17 @@ h2, h3 {
     letter-spacing: 0.25em;
     text-transform: uppercase;
     font-weight: 600;
+    
 }
 
 p {
     line-height: 1.6em;
 }
 
+.form-group
+{
+    margin-top: 1.5em;
+}
 
 /*
  * -- Layout Styles --
@@ -157,6 +162,7 @@ p {
     margin: 0;
     padding: 0;
     text-align: center;
+    color: #6d0202;
 }
 
 
