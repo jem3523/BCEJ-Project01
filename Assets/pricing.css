@@ -115,6 +115,10 @@ p {
 .pricing-table-header {
     background: #111;
     color: #fff;
+    padding-top: 1em;
+    padding-right: 0em;
+    padding-bottom: 1em;
+    padding-left: 0em;
 }
     .pricing-table-header h2 {
         margin: 0;
@@ -181,7 +185,11 @@ p {
     border-radius: 2em;
     font-weight: bold;
     position: relative;
-    bottom: -1.5em;
+    
+    margin-top: 1.5em;
+    margin-right: 1em;
+    margin-bottom: 0em;
+    margin-left: 1em;
 }
 
 .information-head {
