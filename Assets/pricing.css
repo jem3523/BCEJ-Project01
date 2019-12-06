@@ -3,7 +3,7 @@
  * Most of these are inherited from Base, but I want to change a few.
  */
 body {
-    color: #526066;
+    color: #a31818;
 }
 
 h2, h3 {
@@ -49,11 +49,9 @@ p {
  */
 
 .banner {
-    background: transparent url('http://24.media.tumblr.com/ccb268832580ac12951828a1c179de69/tumblr_mo2xbk8JUK1st5lhmo1_1280.jpg') 0 0 no-repeat fixed;
+    background: url("wine.jpg");
     text-align: center;
     background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://24.media.tumblr.com/ccb268832580ac12951828a1c179de69/tumblr_mo2xbk8JUK1st5lhmo1_1280.jpg', sizingMethod='scale');
-
     height: 200px;
     width: 100%;
     margin-bottom: 3em;
@@ -65,7 +63,7 @@ p {
         vertical-align: middle;
         margin-bottom: 0;
         font-size: 2em;
-        color: white;
+        color: #fff;
         font-weight: 500;
         text-shadow: 0 1px 1px black;
     }
@@ -73,50 +71,54 @@ p {
 
 
 /*
- * -- PRICING TABLE WRAPPER --
- * This element wraps up all the pricing table elements
+ * -- INGREIDENT TABLE WRAPPER --
+ * This element wraps up all the ingreident table elements
  */
- .pricing-tables,
+ .ingred-tables,
  .information {
     max-width: 980px;
     margin: 0 auto;
  }
-.pricing-tables {
+.ingred-tables {
     margin-bottom: 3.125em;
     text-align: center;
 }
 
 /*
- * -- PRICING TABLE  --
- * Every pricing table has the .pricing-table class
+ * -- INGREIDENT TABLE  --
+ * Every ingreident table has the .ingred-table class
  */
-.pricing-table {
+.ingred-table {
     border: 1px solid #ddd;
     margin: 0 0.5em 2em;
     padding: 0 0 3em;
 }
 
 /*
- * -- PRICING TABLE HEADER COLORS --
- * Choose a different color based on the type of pricing table.
+ * -- INGREIDENT TABLE HEADER COLORS --
+ * Choose a different color based on the type of ingredient table.
  */
-.pricing-table-free .pricing-table-header {
-    background: #519251;
+.ingred-table-free .ingred-table-header {
+    background: #ffb9b9;
 }
 
-.pricing-table-biz .pricing-table-header {
-    background: #2c4985;
+.ingred-table-biz .ingred-table-header {
+    background: #6d0202;
 }
 
 /*
- * -- PRICING TABLE HEADER --
+ * --  TABLE HEADER --
  * By default, a header is black/white, and has some styles for its <h2> name.
  */
-.pricing-table-header {
+.ingred-table-header {
     background: #111;
     color: #fff;
+    padding-top: 1em;
+    padding-right: 0em;
+    padding-bottom: 1em;
+    padding-left: 0em;
 }
-    .pricing-table-header h2 {
+    .ingred-table-header h2 {
         margin: 0;
         padding-top: 2em;
         font-size: 1em;
@@ -126,31 +128,31 @@ p {
 
 
 /*
- * -- PRICING TABLE PRICE --
+ * -- TABLE PRICE --
  * Styles for the price and the corresponding <span>per month</span>
  */
-.pricing-table-price {
+.ingred-table-price {
     font-size: 6em;
     margin: 0.2em 0 0;
     font-weight: 100;
 }
-    .pricing-table-price span {
+    .ingred-table-price span {
         display: block;
         text-transform: uppercase;
         font-size: 0.2em;
         padding-bottom: 2em;
         font-weight: 400;
-        color: rgba(255, 255, 255, 0.5);
-        *color: #fff;
+        color: #360000;
+        
     }
 
 
 
 /*
- * -- PRICING TABLE LIST --
- * Each pricing table has a <ul> which is denoted by the .pricing-table-list class
+ * --  TABLE LIST --
+ * Each pricing table has a <ul> which is denoted by the .ingred-table-list class
  */
-.pricing-table-list {
+.ingred-table-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -159,10 +161,10 @@ p {
 
 
 /*
- * -- PRICING TABLE LIST ELEMENTS --
- * Styles for the individual list elements within each pricing table
+ * -- TABLE LIST ELEMENTS --
+ * Styles for the individual list elements within each ingred table
  */
-.pricing-table-list li {
+.ingred-table-list li {
     padding: 0.8em 0;
     background: #f7f7f7;
     border-bottom: 1px solid #e7e7e7;
@@ -170,8 +172,8 @@ p {
 
 
 /*
- * -- PRICING TABLE BUTTON --
- * Styles for the "Choose" button at the bottom of a pricing table.
+ * -- TABLE BUTTON --
+ * Styles for the "Choose" button at the bottom of a ingred table.
  * This inherits from Pure Button.
  */
 .button-choose {
@@ -181,7 +183,10 @@ p {
     border-radius: 2em;
     font-weight: bold;
     position: relative;
-    bottom: -1.5em;
+    margin-top: 1.5em;
+    margin-right: 1em;
+    margin-bottom: 0em;
+    margin-left: 1em;
 }
 
 .information-head {
