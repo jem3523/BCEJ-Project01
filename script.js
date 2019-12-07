@@ -64,7 +64,8 @@ function submit ()
 
  
     var apiKey = "acc2d918d19f494f9490b92a1b73fc4d";
-    var queryURL = "https://api.spoonacular.com/recipes/search?query=" + sendList + "&number=1&apiKey=" + apiKey;
+    //var queryURL = "https://api.spoonacular.com/recipes/search?query=" + sendList + "&number=1&apiKey=" + apiKey;
+    var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?query=" + sendList + "&number=1&apiKey=" + apiKey;
     console.log(queryURL);
 
     //call the API and set variables (some will be used in the 2nd API)
@@ -74,18 +75,19 @@ function submit ()
     }).then(function(response)  
     {
         var results = response.totalResults;
-        var title = response.results[0].title;
-        var imageBase = response.baseUri;
-        var image = response.results[0].image;
-        image = imageBase + image;
-        var recipeID = response.results[0].id;
-        var recipeDetailURL = "https://api.spoonacular.com/recipes/" + recipeID + "/information?includeNutrition=false&apiKey=" + apiKey;
-        console.log("image: " + image);
-        console.log("detailURL: " + recipeDetailURL);
 
         //the API will give you a 0 results if it can't find any recipe
         if (results > 0)
         {
+            var title = response.results[0].title;
+            var imageBase = response.baseUri;
+            var image = response.results[0].image;
+            image = imageBase + image;
+            var recipeID = response.results[0].id;
+            var recipeDetailURL = "https://api.spoonacular.com/recipes/" + recipeID + "/information?includeNutrition=false&apiKey=" + apiKey;
+            console.log("image: " + image);
+            console.log("detailURL: " + recipeDetailURL);
+            
             //using information from the first API, call the second API for more detail
             $.ajax({
                 url: recipeDetailURL,
@@ -109,9 +111,10 @@ function submit ()
                 + sourceURL + "'>Go To Recipe</a>");
 
                 //sometimes there is no wine pairing, so check to see if there is one
-                if (recipeDetailResponse.winePairing.hasOwnProperty('productMatches') == true)
+                if (recipeDetailResponse.winePairing.hasOwnProperty('productMatches') == true &&
+                    recipeDetailResponse.winePairing.productMatches.length > 0)
                 {
-                    var wineID = recipeDetailResponse.winePairing.productMatches[0].id;
+                    //var wineID = recipeDetailResponse.winePairing.productMatches[0].id;
                     var wineTitle = recipeDetailResponse.winePairing.productMatches[0].title;
                     var wineScore = recipeDetailResponse.winePairing.productMatches[0].averageRating;
                     var winePrice = recipeDetailResponse.winePairing.productMatches[0].price;
