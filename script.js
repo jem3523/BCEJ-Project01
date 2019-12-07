@@ -39,6 +39,7 @@ function clear ()
 //this function removes ingredient from the list when clicked
 $("#food-entry-list").on ("click", ".ingredBtns", function() { //need to refernce parent div bc bullets are added dynamically     
     $(this).remove(); 
+    //also must remove from array
 })
 
 //this function takes the ingredients adds the to the API to bring back
