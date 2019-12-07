@@ -36,6 +36,11 @@ function clear ()
     $("#level02").remove();
 }
 
+//this function removes ingredient from the list when clicked
+$("#food-entry-list").on ("click", ".ingredBtns", function() { //need to refernce parent div bc bullets are added dynamically     
+    $(this).remove(); 
+})
+
 //this function takes the ingredients adds the to the API to bring back
 //a recipe title and ID
 function submit ()
