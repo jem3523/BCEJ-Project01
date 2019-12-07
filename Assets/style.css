@@ -1,0 +1,269 @@
+/*
+ * -- BASE STYLES --
+ * Most of these are inherited from Base, but I want to change a few.
+ */
+ body {
+    color: #a31818;
+}
+
+h2, h3 {
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 600;
+    
+}
+
+p {
+    line-height: 1.6em;
+}
+
+.form-group
+{
+    margin-top: 1.5em;
+}
+
+/*
+ * -- Layout Styles --
+ */
+.l-content {
+    margin: 0 auto;
+}
+
+.l-box {
+    padding: 0.5em 2em;
+}
+
+/*
+ * -- MENU STYLES --
+ * Make the menu have a very faint box-shadow.
+ */
+.pure-menu {
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+}
+
+.pure-menu-link {
+    padding: .5em .7em;
+}
+
+
+/*
+ * -- BANNER --
+ * The top banner with the headings. By using a combination
+ * of `display: table;` and `display: table-cell;`, we can
+ * vertically center the text.
+ */
+
+.banner {
+    background: url("wine.jpg");
+    text-align: center;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 0em;
+    display: table;
+}
+
+    .banner-head {
+        display: table-cell;
+        vertical-align: middle;
+        margin-bottom: 0;
+        font-size: 2em;
+        color: #fff;
+        font-weight: 500;
+        text-shadow: 0 1px 1px black;
+    }
+
+
+
+/*
+ * -- INGREIDENT TABLE WRAPPER --
+ * This element wraps up all the ingreident table elements
+ */
+ .ingred-tables,
+ .information {
+    max-width: 980px;
+    margin: 0 auto;
+ }
+.ingred-tables {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+/*
+ * -- INGREIDENT TABLE  --
+ * Every ingreident table has the .ingred-table class
+ */
+.ingred-table {
+    border: 1px solid #ddd;
+    padding: 0;
+    margin-top: .5em;
+    margin-right: .5em;
+    margin-bottom: .5em;
+    margin-left: .5em;
+    
+}
+
+/*
+ * -- INGREIDENT TABLE HEADER COLORS --
+ * Choose a different color based on the type of ingredient table.
+ */
+.ingred-table-free .ingred-table-header {
+    background: #ffb9b9;
+}
+
+.ingred-table-biz .ingred-table-header {
+    background: #6d0202;
+}
+
+/*
+ * --  TABLE HEADER --
+ * By default, a header is black/white, and has some styles for its <h2> name.
+ */
+.ingred-table-header {
+    background: #111;
+    color: #fff;
+    padding-top: 1em;
+    padding-right: 0em;
+    padding-bottom: 1em;
+    padding-left: 0em;
+}
+    .ingred-table-header h2 {
+        margin: 0;
+        padding-top: 2em;
+        font-size: 1em;
+        font-weight: normal;
+
+    }
+
+
+/*
+ * -- TABLE PRICE --
+ * Styles for the price and the corresponding <span>per month</span>
+ */
+.ingred-table-price {
+    font-size: 6em;
+    margin: 0.2em 0 0;
+    font-weight: 100;
+}
+    .ingred-table-price span {
+        display: block;
+        text-transform: uppercase;
+        font-size: 0.2em;
+        padding-bottom: 2em;
+        font-weight: 400;
+        color: #360000;
+        
+    }
+
+
+
+/*
+ * --  TABLE LIST --
+ * Each pricing table has a <ul> which is denoted by the .ingred-table-list class
+ */
+.ingred-table-list {
+    list-style-type: none;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-right: .4em;
+    margin-left: .4em;
+    padding: 0;
+    text-align: center;
+    color: #6d0202;
+}
+
+
+/*
+ * -- TABLE LIST ELEMENTS --
+ * Styles for the individual list elements within each ingred table
+ */
+.ingred-table-list li {
+    padding: 0.8em 0;
+    background: #f7f7f7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+
+/*
+ * -- TABLE BUTTON --
+ * Styles for the "Choose" button at the bottom of a ingred table.
+ * This inherits from Pure Button.
+ */
+.button-choose {
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #333;
+    border-radius: 2em;
+    font-weight: bold;
+    position: relative;
+
+   
+    margin-top: 0em;
+    margin-right: 1em;
+    margin-bottom: 1.5em;
+    margin-left: 1em;
+}
+
+.button-recipe {
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #333;
+    border-radius: 2em;
+    font-weight: bold;
+    position: relative;
+
+   
+    margin-top: 1.5em;
+    margin-right: 1em;
+    margin-bottom: .5em;
+    margin-left: 1em;
+}
+
+.inputBox {
+    margin-bottom: 1.5em;
+}
+
+.information-head {
+    color: black;
+    font-weight: 500;
+}
+
+.footer {
+    background: #111;
+    color: #888;
+    text-align: center;
+}
+    .footer a {
+        color: #ddd;
+    }
+
+
+
+/*
+ * -- TABLET MEDIA QUERIES --
+ * On tablets, we want to slightly adjust the size of the banner
+ * text and add some vertical space between the various pricing tables
+ */
+@media(min-width: 767px) {
+
+    .banner-head {
+        font-size: 4em;
+    }
+    .pricing-table {
+        margin-bottom: 0;
+    }
+
+}
+
+/*
+ * -- PHONE MEDIA QUERIES --
+ * On phones, we want to reduce the height and font-size of the banner further
+ */
+@media (min-width: 480px) {
+    .banner {
+        height: 400px;
+    }
+    .banner-head {
+        font-size: 3em;
+    }
+}
