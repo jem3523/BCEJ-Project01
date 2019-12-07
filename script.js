@@ -23,7 +23,20 @@ function add ()
     {
     //add the item to the array and the display list
     ingredList.push({key:dataKey, value:newItem}); //changed
-    $("#food-entry-list").append("<li class=\"ingredBtns\" data-key=" + dataKey + ">" + newItem + "</li>"); //changed
+    $("#food-entry-list").append("<li class=\"ingredBtns\" data-ing= '" + newItem+ "' data-key=" + dataKey + ">" + newItem + "</li>"); //changed
+    $(".ingredBtns").hover (
+        function()
+        {
+            $(this).text("Click on this ingredient to delete it.")
+        },
+        function(temp)
+        {   
+            //console.log(`post hover: ${$(this).attr("data-ing")}`);
+            $(this).text($(this).attr("data-ing"))
+        },
+        
+    );
+
     dataKey++; //changed
     $('#ingredInput').val(null);
     }
@@ -80,8 +93,8 @@ function submit ()
 
  
     var apiKey = "acc2d918d19f494f9490b92a1b73fc4d";
-    //var queryURL = "https://api.spoonacular.com/recipes/search?query=" + sendList + "&number=1&apiKey=" + apiKey;
-    var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?query=" + sendList + "&number=1&apiKey=" + apiKey;
+    var queryURL = "https://api.spoonacular.com/recipes/search?query=" + sendList + "&number=1&apiKey=" + apiKey;
+    //var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + sendList + "&number=1&apiKey=" + apiKey;
     console.log(queryURL);
 
     //call the API and set variables (some will be used in the 2nd API)
