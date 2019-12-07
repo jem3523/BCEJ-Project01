@@ -1,5 +1,6 @@
 //define the arry where ingredients will be stored
 var ingredList =[];
+var dataKey = 0; //changed
 
 //create the listeners for all three buttons
 $("#ingredSubmit").on("click", submit );
@@ -21,8 +22,9 @@ function add ()
     else
     {
     //add the item to the array and the display list
-    ingredList.push(newItem);
-    $("#food-entry-list").append("<li>" + newItem + "</li>");
+    ingredList.push({key:dataKey, value:newItem}); //changed
+    $("#food-entry-list").append("<li class=\"ingredBtns\" data-key=" + dataKey + ">" + newItem + "</li>"); //changed
+    dataKey++; //changed
     $('#ingredInput').val(null);
     }
 };
@@ -35,6 +37,20 @@ function clear ()
     $("#food-entry-list").empty();
     $("#level02").remove();
 }
+
+//this function removes ingredient from the list when clicked
+$("#food-entry-list").on ("click", ".ingredBtns", function(target) { //need to refernce parent div bc bullets are added dynamically     
+    console.log(target); 
+    console.log(this); 
+    var key = this.getAttribute("data-key");
+    $(this).remove();
+    for(var i=0;i<ingredList.length;i++){
+        if(ingredList[i].key == key) {
+            ingredList.splice(i, 1); 
+        }
+    }
+    console.log(ingredList); 
+})
 
 //this function takes the ingredients adds the to the API to bring back
 //a recipe title and ID
@@ -55,7 +71,7 @@ function submit ()
     //convert each array item into a format that can be added to the API
     for (j=0 ; j<ingredList.length; j++)
     {
-        var item = ingredList[j];
+        var item = ingredList[j].value; //this was changed
         item = item.trim();
         //replace any space with code for spacing
         item = item.replace(/\s/g, "%20");
